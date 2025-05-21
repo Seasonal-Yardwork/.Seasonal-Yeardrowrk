@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seasonal Yard Work - Supporting Our Team</title>
+    <title>GreenScape Lawn Care | Professional Yard Services</title>
+    <base target="_self">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/@preline/preline@2.0.0/dist/preline.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -12,116 +12,179 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#626F47',
-                        secondary: '#A4B465',
-                        light: '#F5ECD5',
-                        accent: '#F0BB78',
+                        primary: '#1a3a1f',
+                        secondary: '#3a7d44',
+                        accent: '#f5cb5c',
+                        light: '#f8f9fa'
                     }
                 }
             }
         }
     </script>
     <style>
+        .hero-section {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                              url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 80vh;
+        }
+        
+        .btn-glow:hover {
+            box-shadow: 0 0 15px rgba(245, 203, 92, 0.7);
+        }
+        
+        .text-shadow {
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
         .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-        }
-        .hero-pattern {
-            background-image: radial-gradient(#A4B465 1px, transparent 1px);
-            background-size: 20px 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
-<body class="bg-light text-primary font-sans antialiased">
-    <!-- Navigation -->
-    <nav class="bg-primary text-light shadow-md sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold">Seasonal Yard Work</a>
-            <div class="hidden md:flex space-x-6">
-                <a href="#about" class="hover:text-accent transition">About</a>
-                <a href="#services" class="hover:text-accent transition">Services</a>
-                <a href="#booking" class="hover:text-accent transition">Book Now</a>
-                <a href="#contact" class="hover:text-accent transition">Contact</a>
+<body class="dark:bg-gray-900">
+    <!-- Enhanced Hero Section -->
+    <section class="hero-section flex items-center justify-center relative overflow-hidden">
+        <div class="container mx-auto px-4 z-10">
+            <div class="text-center max-w-3xl mx-auto">
+                <span class="inline-block bg-accent text-primary text-sm font-semibold px-3 py-1 rounded-full mb-4">
+                    <i class="fas fa-leaf mr-2"></i>Locally Owned & Operated
+                </span>
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white text-shadow">
+                    <span class="block">Premium Lawn Care</span>
+                    <span class="text-accent">You Can Trust</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-100 mb-8 text-shadow">
+                    Transform your yard into a lush, green paradise with our expert mowing and landscaping service
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <button onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'})" 
+                            class="bg-accent hover:bg-opacity-90 text-primary font-bold py-4 px-8 rounded-lg transition btn-glow transform hover:scale-105">
+                        <i class="fas fa-calendar-check mr-2"></i>Book Service Now
+                    </button>
+                    <button onclick="document.getElementById('service').scrollIntoView({behavior: 'smooth'})" 
+                            class="bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-bold py-4 px-8 rounded-lg transition border-2 border-white border-opacity-30 transform hover:scale-105">
+                        <i class="fas fa-clipboard-list mr-2"></i>Our Service
+                    </button>
+                </div>
+                <div class="mt-12 flex justify-center space-x-6">
+                    <div class="flex items-center text-white">
+                        <i class="fas fa-check-circle text-accent text-xl mr-2"></i>
+                        <span>Free Estimates</span>
+                    </div>
+                    <div class="flex items-center text-white">
+                        <i class="fas fa-check-circle text-accent text-xl mr-2"></i>
+                        <span>Fully Insured</span>
+                    </div>
+                    <div class="flex items-center text-white">
+                        <i class="fas fa-check-circle text-accent text-xl mr-2"></i>
+                        <span>Same-Day Service</span>
+                    </div>
+                </div>
             </div>
-            <button class="md:hidden focus:outline-none" id="menu-toggle">
-                <i class="fas fa-bars text-2xl"></i>
-            </button>
         </div>
-        <!-- Mobile menu -->
-        <div class="md:hidden hidden bg-primary px-4 pb-4" id="mobile-menu">
-            <a href="#about" class="block py-2 hover:text-accent transition">About</a>
-            <a href="#services" class="block py-2 hover:text-accent transition">Services</a>
-            <a href="#booking" class="block py-2 hover:text-accent transition">Book Now</a>
-            <a href="#contact" class="block py-2 hover:text-accent transition">Contact</a>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero-pattern py-16 md:py-24">
-        <div class="container mx-auto px-4">
-            <div class="text-center">
-                <h1 class="text-4xl md:text-5xl font-bold mb-4">Prefesional Yardwork services!</h1>
-                <p class="text-xl mb-6">Premium lawn care from experts at a very affordable price💥💥</p>
-                <a href="#booking" class="bg-accent hover:bg-opacity-90 text-primary font-bold py-3 px-6 rounded-lg transition inline-block">Book Now</a>
-            </div>
-        </div>
+        <div class="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-gray-900 to-transparent"></div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-16 bg-white">
+    <!-- Service Section -->
+    <section id="service" class="py-16 bg-light">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">Our Story</h2>
-            <div class="text-center">
-                <p class="text-lg mb-4">We're a group of dedicated wrestlers working hard to raise funds for our wrestling team. All proceeds from our yard work services go directly towards purchasing new equipment and supporting our programs.</p>
-              
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-16 bg-secondary bg-opacity-10">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">Our Services</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service Cards -->
-                <div class="service-card bg-white rounded-lg shadow-md p-6 transition duration-300">
-                    <div class="text-accent text-4xl mb-4">
-                        <i class="fas fa-seedling"></i>
+            <h2 class="text-3xl font-bold text-center mb-4">Our Service</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                Professional yard care services at affordable prices. We take pride in making your outdoor space beautiful.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden service-card transition duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-full">
+                                  <i class="fas fa-seedling"></i>
+                            </div>
+                            <h3 class="text-xl font-bold ml-4">Lawn Mowing</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Professional mowing with clean edges for a perfectly manicured lawn.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold text-lg">$30 - $55</span>
+                            <button onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'})" 
+                                    class="text-accent hover:text-primary font-medium">
+                                Book Now <i class="fas fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Lawn Mowing</h3>
-                    <p class="mb-4">($30-$55) Professional lawn mowing to keep your yard looking neat and tidy.</p>
-                    
                 </div>
                 
-                <div class="service-card bg-white rounded-lg shadow-md p-6 transition duration-300">
-                    <div class="text-accent text-4xl mb-4">
-                        <i class="fas fa-leaf"></i>
+                <!-- Service 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden service-card transition duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-full">
+                                <i class="fas fa-cut text-primary text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold ml-4">Weed Eating</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Precise trimming around fences, trees, and edges for a polished look.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold text-lg">$5</span>
+                            <button onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'})" 
+                                    class="text-accent hover:text-primary font-medium">
+                                Book Now <i class="fas fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Raking Leaves</h3>
-                    <p class="mb-4">($30)Thorough leaf removal to keep your yard clean in the fall.</p>
-                    
                 </div>
                 
-              
-                
-                <div class="service-card bg-white rounded-lg shadow-md p-6 transition duration-300">
-                    <div class="text-accent text-4xl mb-4">
-                        <i class="fas fa-snowplow"></i>
+                <!-- Service 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden service-card transition duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-full">
+                                <i class="fas fa-leaf text-primary text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold ml-4">Leaf Raking</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Complete leaf removal to keep your yard clean and healthy.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold text-lg">$30</span>
+                            <button onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'})" 
+                                    class="text-accent hover:text-primary font-medium">
+                                Book Now <i class="fas fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Shoveling Snow</h3>
-                    <p class="mb-4">($25-$35)Reliable snow removal from driveways and walkways in winter.</p>
-                    
                 </div>
                 
-                <div class="service-card bg-white rounded-lg shadow-md p-6 transition duration-300">
-                    <div class="text-accent text-4xl mb-4">
-                        <i class="fas fa-cut"></i>
+                <!-- Service 4 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden service-card transition duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-full">
+                                <i class="fas fa-snowflake text-primary text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold ml-4">Snow Removal</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Reliable snow clearing for driveways and walkways in winter months.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold text-lg">$25 - $35</span>
+                            <button onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'})" 
+                                    class="text-accent hover:text-primary font-medium">
+                                Book Now <i class="fas fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Weed eating</h3>
-                    <p class="mb-4">($5)Precision edging and trimming for a polished look.</p>
-                    
                 </div>
-                
-               
             </div>
         </div>
     </section>
@@ -129,14 +192,14 @@
     <!-- Booking Section -->
     <section id="booking" class="py-16 bg-primary text-light">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">Book Your Service</h2>
+            <h2 class="text-3xl font-bold text-center mb-12 text-white">Book Your Service</h2>
             <div class="max-w-2xl mx-auto bg-white text-primary rounded-lg shadow-xl p-6 md:p-8">
                 <p class="mb-6 text-center">Put whatever time works best with you, and address. We will email you within the next 4 business days to confirm.</p>
                 
-                <form id="booking-form" action="https://formspree.io/f/mjkwonwg" method="POST" class="space-y-4">
+                                
+                <form id="booking-form" action="https://formspree.io/f/mwpojpdk" method="POST" class="space-y-4">
                     <input type="hidden" name="_subject" value="New Booking Request">
                     <input type="hidden" name="_next" value="#thank-you">
-                    
                     <div>
                         <label for="name" class="block font-medium mb-1">Full Name</label>
                         <input type="text" id="name" name="name" required 
@@ -144,7 +207,7 @@
                     </div>
                     
                     <div>
-                        <label for="email" class="block font-medium mb-1">Email</label>
+                        <label for="email" class="block font-medium mb-1">Email Address</label>
                         <input type="email" id="email" name="email" required 
                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent">
                     </div>
@@ -157,86 +220,46 @@
                     
                     <div>
                         <label for="address" class="block font-medium mb-1">Service Address</label>
-                        <input type="text" id="address" name="address" required 
-                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent">
+                        <textarea id="address" name="address" rows="2" required 
+                                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent"></textarea>
                     </div>
                     
                     <div>
                         <label for="service" class="block font-medium mb-1">Select Service</label>
                         <select id="service" name="service" required 
                                 class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent">
-                            <option value="">-- Choose a service --</option>
-                            <option value="Lawn Mowing">Lawn Mowing</option>
-                            <option value="Raking Leaves">Raking Leaves</option>
-                            <option value="Trimming Trees">Trimming Trees</option>
-                            <option value="Shoveling Snow">Shoveling Snow</option>
-                            <option value="Weedeating">Weedeating</option>
-                            <option value="Bush Trimming">Bush Trimming</option>
+                            <option value="" disabled selected>Choose a service</option>
+                            <option value="Lawn Mowing ($30-$55)">Lawn Mowing ($30-$55)</option>
+                            <option value="Weed Eating ($5)">Weed Eating ($5)</option>
+                            <option value="Leaf Raking ($30)">Leaf Raking ($30)</option>
+                            <option value="Snow Removal ($25-$35)">Snow Removal ($25-$35)</option>
+                            <option value="Multiple Services">Multiple Services (Please specify below)</option>
                         </select>
                     </div>
                     
                     <div>
                         <label for="date" class="block font-medium mb-1">Preferred Date</label>
-                        <input type="date" id="date" name="date" required 
+                        <input type="date" id="date" name="date" 
                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent">
                     </div>
                     
                     <div>
-                        <label for="time" class="block font-medium mb-1">Preferred Time</label>
-                        <input type="time" id="time" name="time" 
-                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent">
-                    </div>
-                    
-                    <div>
-                        <label for="notes" class="block font-medium mb-1">Additional Notes</label>
-                        <textarea id="notes" name="notes" rows="3" 
-                                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent"></textarea>
+                        <label for="message" class="block font-medium mb-1">Additional Details</label>
+                        <textarea id="message" name="message" rows="4" 
+                                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent" 
+                                  placeholder="Special instructions, yard size, multiple services needed, etc."></textarea>
                     </div>
                     
                     <button type="submit" 
-                            class="w-full bg-accent hover:bg-opacity-90 text-primary font-bold py-3 px-6 rounded-lg transition mt-6">
-                        Submit Booking
+                            class="w-full bg-accent hover:bg-opacity-90 text-primary font-bold py-3 px-6 rounded-lg transition btn-glow mt-6">
+                        Submit Booking Request
                     </button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">Contact Us</h2>
-            <div class="max-w-4xl mx-auto flex flex-col md:flex-row gap-8">
-                <div class="md:w-1/2">
-                    <h3 class="text-xl font-bold mb-4">Get in Touch</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <i class="fas fa-phone-alt text-accent text-xl mt-1 mr-4"></i>
-                            <div>
-                                <h4 class="font-medium">Phone</h4>
-                                <p>(539) 895-9754</p>
-                              <p> (918) 500-3298</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-envelope text-accent text-xl mt-1 mr-4"></i>
-                            <div>
-                                <h4 class="font-medium">Email</h4>
-                                <p>SeasonalYardworks25@gmail.com</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fab fa-instagram text-accent text-xl mt-1 mr-4"></i>
-                            <div>
-                                <h4 class="font-medium">Instagram</h4>
-                                <p>@seasonalyardworks</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-  
-
-    <!-- Thank You Section -->
+     <!-- Thank You Section -->
     <div id="thank-you" class="fixed inset-0 bg-primary bg-opacity-95 flex items-center justify-center z-50 hidden">
         <div class="bg-white p-8 md:p-12 rounded-lg max-w-md mx-4 text-center">
             <h2 class="text-3xl font-bold mb-4 text-primary">Thanks for your support!</h2>
@@ -246,3 +269,5 @@
             </a>
         </div>
     </div>
+</body>
+</html>
